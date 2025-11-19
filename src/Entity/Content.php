@@ -26,7 +26,7 @@ class Content
     private ?string $tags = null;
 
     #[ORM\Column]
-    private ?bool $approved = null;
+    private ?bool $approved = false;
 
     public function getId(): ?int
     {
