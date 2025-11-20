@@ -14,7 +14,7 @@ final class HomeController extends AbstractController
     {
         $posts = $repository->findBy(['approved' => true]);
         return $this->render('home/index.html.twig', [
-            "post" => $posts,
+            "posts" => $posts,
         ]);
     }
 }

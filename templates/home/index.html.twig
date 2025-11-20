@@ -1,7 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Approved Posts{% endblock %}
 
 {% block body %}
-<h1>Approved Posts</h1>
+<h1 class="mb-4">Approved Posts</h1>
+
+{% if posts|length > 0 %}
+    {% for post in posts %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p>{{ post.body|slice(0, 200) }}...</p>
+                <p><strong>Summary:</strong> {{ post.summary }}</p>
+                <p><strong>Tags:</strong> {{ post.tags }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No posts yet.</p>
+{% endif %}
+
 {% endblock %}
